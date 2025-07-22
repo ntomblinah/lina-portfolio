@@ -1,26 +1,25 @@
-/* 🌍 Global Reset & Smooth Scroll */
+/* Smooth Scrolling */
 html {
   scroll-behavior: smooth;
 }
 
+/* Base Styles */
 body {
-  background-color: #f0f2f5;
-  font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f2f5;
   color: #222;
-  overflow-x: hidden;
-  overflow-y: auto;
 }
 
-/* 📌 Sticky Navigation */
+/* Navigation */
 nav {
   position: sticky;
   top: 0;
-  z-index: 999;
+  z-index: 1000;
   background-color: #004d99;
-  padding: 1rem;
   text-align: center;
+  padding: 1rem;
 }
 
 nav ul {
@@ -30,115 +29,148 @@ nav ul {
 }
 
 nav li {
-  display: inline;
+  display: inline-block;
   margin: 0 1rem;
 }
 
 nav a {
-  color: #ffffff;
+  color: white;
   text-decoration: none;
   font-weight: bold;
   font-size: 1rem;
+  transition: color 0.3s ease;
 }
 
 nav a:hover {
   color: #ffe680;
 }
 
-/* 🧠 Header */
+/* Hero Header */
 header {
-  background-color: #00284d;
-  color: #ffffff;
   text-align: center;
+  background-color: #00284d;
+  color: white;
   padding: 3rem 1rem;
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 header h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  letter-spacing: 1px;
+  font-size: 2.8rem;
   margin-bottom: 0.5rem;
 }
 
 header p {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-style: italic;
 }
 
-/* 📦 Section Cards */
+/* Section Layout */
 section {
-  background-color: #ffffff;
-  margin: 2rem auto;
+  background-color: #fff;
+  margin: 3rem auto;
   padding: 2rem;
   max-width: 900px;
   border-left: 5px solid #007acc;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
   border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.06);
 }
 
-/* 📝 Section Headings */
 section h2 {
   font-size: 1.6rem;
   color: #004d99;
+  text-transform: uppercase;
   margin-bottom: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
-/* 🧩 Experience List */
+/* Journey Timeline */
+#journey ul {
+  padding-left: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Experience List */
 #experience ul {
-  list-style-type: none;
-  padding-left: 0;
+  padding-left: 1.2rem;
+  line-height: 1.6;
 }
 
-#experience li {
-  margin-bottom: 0.8rem;
-  padding: 0.5rem;
-  background-color: #f7f9fc;
-  border-left: 3px solid #004d99;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-/* 💼 Projects */
-#projects {
-  background-color: #ffffff;
-  padding: 2rem;
-  max-width: 900px;
-  margin: 2rem auto;
-  border-left: 5px solid #00cc99;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
-  border-radius: 8px;
-}
-
-#projects h2 {
-  color: #009973;
-  text-transform: uppercase;
-  margin-bottom: 1.5rem;
-}
-
+/* Project Cards */
 .project-card {
   background-color: #f8fffc;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
   border-left: 4px solid #00cc99;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   border-radius: 6px;
-  transition: transform 0.3s ease;
-}
-
-.project-card h3 {
-  margin-bottom: 0.5rem;
-  font-size: 1.3rem;
-  color: #00664d;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
-  transform: scale(1.02);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 10px rgba(0,0,0,0.1);
 }
 
-/* ✨ Scroll Reveal */
-section, .project-card {
+.project-card h3 {
+  margin: 0.5rem 0;
+  color: #00664d;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  background-color: #00cc99;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #009973;
+}
+
+/* Skills Section */
+#skills h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.badge {
+  display: inline-block;
+  margin: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  border-radius: 20px;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Color-coded badge groups */
+.badge:nth-child(n+1):nth-child(-n+6)   { background-color: #007acc; } /* Dev */
+.badge:nth-child(n+7):nth-child(-n+11)  { background-color: #5c6bc0; } /* Cloud */
+.badge:nth-child(n+12):nth-child(-n+16) { background-color: #26a69a; } /* Support */
+.badge:nth-child(n+17)                  { background-color: #f06292; } /* Digital */
+
+#building ul {
+  padding-left: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Footer */
+footer {
+  background-color: #004d99;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.95rem;
+}
+
+/* Scroll Animation */
+section, .project-card, .badge, footer {
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.6s ease, transform 0.6s ease;
@@ -149,44 +181,7 @@ section, .project-card {
   transform: translateY(0);
 }
 
-/* 🛡️ Skill Badges */
-.badge {
-  display: inline-block;
-  background-color: #007acc;
-  color: white;
-  padding: 0.4rem 0.8rem;
-  margin: 0.5rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.badge:hover {
-  background-color: #cc0000;
-}
-
-/* 🔗 GitHub Button */
-.btn {
-  display: inline-block;
-  padding: 0.6rem 1rem;
-  background-color: #00cc99;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  margin-top: 0.5rem;
-  transition: background 0.3s ease;
-}
-
-.btn:hover {
-  background-color: #009973;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* 🫧 Bubble Animation */
+/* Floating Bubbles */
 .bubble-container {
   position: absolute;
   bottom: 0;
@@ -212,28 +207,6 @@ section, .project-card {
 .bubble:nth-child(5) { left: 50%; animation-delay: 3s; }
 
 @keyframes floatUp {
-  0% { transform: translateY(0); opacity: 1; }
+  0%   { transform: translateY(0);   opacity: 1; }
   100% { transform: translateY(-600px); opacity: 0; }
-}
-
-/* 📱 Responsive Nav (Mobile) */
-@media screen and (max-width: 600px) {
-  nav ul {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-  }
-
-  nav li {
-    margin: 0;
-  }
-
-  nav a {
-    font-size: 1.1rem;
-  }
-
-  .bubble {
-    width: 20px;
-    height: 20px;
-  }
 }
