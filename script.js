@@ -1,9 +1,13 @@
-window.addEventListener('load', () => {
-  const header = document.querySelector('header');
-  header.style.opacity = '0';
-  header.style.transition = 'opacity 1.5s ease-in-out';
-  setTimeout(() => {
-    header.style.opacity = '1';
-  }, 100);
-});
+window.addEventListener("scroll", function () {
+  const reveals = document.querySelectorAll("section, .project-card");
 
+  for (let i = 0; i < reveals.length; i++) {
+    const windowHeight = window.innerHeight;
+    const revealTop = reveals[i].getBoundingClientRect().top;
+    const revealPoint = 150;
+
+    if (revealTop < windowHeight - revealPoint) {
+      reveals[i].classList.add("visible");
+    }
+  }
+});
