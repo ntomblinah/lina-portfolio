@@ -181,18 +181,6 @@ section, .project-card {
   background-color: #009973;
 }
 
-/* 🌸 Flower Animation */
-.flower-container {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-}
-
-.flower {
-  width: 100px;
-  animation: spin 10s linear infinite;
-}
-
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
@@ -242,16 +230,6 @@ section, .project-card {
 
   nav a {
     font-size: 1.1rem;
-  }
-
-  .flower-container {
-    position: static;
-    text-align: center;
-    margin-top: 1rem;
-  }
-
-  .flower {
-    width: 80px;
   }
 
   .bubble {
