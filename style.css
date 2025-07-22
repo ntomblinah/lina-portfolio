@@ -1,17 +1,18 @@
-/* Global Reset & Smooth Scrolling */
+/* 🌍 Global Reset & Layout */
 html {
   scroll-behavior: smooth;
 }
-
 body {
   background-color: #f0f2f5;
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
   color: #222;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
-/* Navigation Bar */
+/* 📌 Navigation */
 nav {
   position: sticky;
   top: 0;
@@ -20,53 +21,44 @@ nav {
   padding: 1rem;
   text-align: center;
 }
-
 nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-
 nav li {
   display: inline;
   margin: 0 1rem;
 }
-
 nav a {
-  color: #ffffff;
+  color: #fff;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1rem;
 }
-
 nav a:hover {
   color: #ffe680;
 }
 
-/* Header */
+/* 🧠 Header */
 header {
   background-color: #00284d;
-  color: #ffffff;
+  color: #fff;
   text-align: center;
   padding: 3rem 1rem;
-  box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
-
 header h1 {
   font-size: 3rem;
   font-weight: 700;
-  letter-spacing: 1px;
-  margin-bottom: 0.5rem;
 }
-
 header p {
   font-size: 1.3rem;
   font-style: italic;
 }
 
-/* Section Cards */
+/* 📦 Sections */
 section {
-  background-color: #ffffff;
+  background-color: #fff;
   margin: 2rem auto;
   padding: 2rem;
   max-width: 900px;
@@ -74,47 +66,28 @@ section {
   box-shadow: 0 4px 6px rgba(0,0,0,0.08);
   border-radius: 6px;
 }
-
-/* Section Headings */
 section h2 {
-  font-size: 1.6rem;
   color: #004d99;
-  margin-bottom: 1rem;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
 }
 
-/* Experience List */
-#experience ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
+/* 💼 Experience */
 #experience li {
+  background-color: #f7f9fc;
   margin-bottom: 0.8rem;
   padding: 0.5rem;
-  background-color: #f7f9fc;
   border-left: 3px solid #004d99;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-/* Projects Section */
+/* 🔧 Projects */
 #projects {
-  background-color: #ffffff;
-  padding: 2rem;
-  max-width: 900px;
-  margin: 2rem auto;
   border-left: 5px solid #00cc99;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.08);
-  border-radius: 8px;
 }
-
 #projects h2 {
   color: #009973;
-  text-transform: uppercase;
-  margin-bottom: 1.5rem;
 }
-
 .project-card {
   background-color: #f8fffc;
   padding: 1.5rem;
@@ -122,27 +95,27 @@ section h2 {
   border-left: 4px solid #00cc99;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
   border-radius: 6px;
+  transition: transform 0.3s ease;
 }
-
 .project-card h3 {
-  margin-bottom: 0.5rem;
-  font-size: 1.3rem;
   color: #00664d;
 }
+.project-card:hover {
+  transform: scale(1.02);
+}
 
-/* Fade-In Scroll Reveal */
+/* ✨ Reveal Animation */
 section, .project-card {
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
-
 .visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Skill Badges */
+/* 🛡️ Badges */
 .badge {
   display: inline-block;
   background-color: #007acc;
@@ -153,8 +126,11 @@ section, .project-card {
   font-size: 0.9rem;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+.badge:hover {
+  background-color: #cc0000;
+}
 
-/* GitHub Button Styling */
+/* 🔗 GitHub Button */
 .btn {
   display: inline-block;
   padding: 0.6rem 1rem;
@@ -162,50 +138,28 @@ section, .project-card {
   color: white;
   text-decoration: none;
   border-radius: 6px;
-  margin-top: 0.5rem;
   transition: background 0.3s ease;
 }
-
 .btn:hover {
   background-color: #009973;
 }
 
-/* Responsive Navigation */
-@media screen and (max-width: 600px) {
-  nav ul {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-  }
-
-  nav li {
-    margin: 0;
-  }
-
-  nav a {
-    font-size: 1.1rem;
-    /* Background & Flower */
-body {
-  overflow: hidden;
-}
-
+/* 🌸 Rotating Flower */
 .flower-container {
   position: absolute;
   top: 20px;
   left: 20px;
 }
-
 .flower {
   width: 100px;
   animation: spin 10s linear infinite;
 }
-
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
 
-/* Bubbles */
+/* 🫧 Bubble Animation */
 .bubble-container {
   position: absolute;
   bottom: 0;
@@ -213,7 +167,6 @@ body {
   height: 100%;
   pointer-events: none;
 }
-
 .bubble {
   position: absolute;
   bottom: -100px;
@@ -223,17 +176,46 @@ body {
   border-radius: 50%;
   animation: floatUp 8s ease-in infinite;
 }
-
 .bubble:nth-child(1) { left: 20%; animation-delay: 0s; }
 .bubble:nth-child(2) { left: 40%; animation-delay: 2s; }
 .bubble:nth-child(3) { left: 60%; animation-delay: 4s; }
 .bubble:nth-child(4) { left: 80%; animation-delay: 1s; }
 .bubble:nth-child(5) { left: 50%; animation-delay: 3s; }
-
 @keyframes floatUp {
   0% { transform: translateY(0); opacity: 1; }
   100% { transform: translateY(-600px); opacity: 0; }
 }
 
+/* 🌼 Flower Burst Effect */
+.flower-burst {
+  position: absolute;
+  width: 40px;
+  pointer-events: none;
+  animation: popOut 1.5s ease-out forwards;
+}
+@keyframes popOut {
+  0% { transform: scale(0) rotate(0deg); opacity: 0; }
+  50% { transform: scale(1.5) rotate(180deg); opacity: 1; }
+  100% { transform: scale(1) rotate(360deg); opacity: 0; }
+}
+
+/* 📱 Responsive */
+@media screen and (max-width: 600px) {
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .flower-container {
+    position: static;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  .flower {
+    width: 80px;
+  }
+  .bubble {
+    width: 20px;
+    height: 20px;
   }
 }
